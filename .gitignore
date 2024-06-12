@@ -3,6 +3,7 @@ target/
 *.class
 .bloop/
 .metals/
+.bsp/
 
 # Miscs
 .tmp/

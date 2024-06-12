@@ -3,5 +3,5 @@ name := "stonic-conference"
 version := "0.1.0"
 
 libraryDependencies ++= Seq(
-  "dev.zio" %% "zio" % "2.1.1"
+  "org.scalatest" %% "scalatest" % "3.2.18" % Test
 )

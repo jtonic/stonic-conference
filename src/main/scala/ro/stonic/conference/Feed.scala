@@ -1,3 +1,5 @@
+package ro.stonic.conference
+
 object Feed:
 
   import ro.stonic.conference._
@@ -41,9 +43,3 @@ object Feed:
     ),
     sponsors = List(stonic, zic, sc)
   )
-
-import Feed._
-import ro.stonic.conference._
-
-Feed.stonicConference
-val correctStonicConference = stonicConference.copy(conferenceType = ConferenceType.Technical("Scala/Functional Programming"))
