@@ -1,0 +1,17 @@
+# Scala
+target/
+*.class
+.bloop/
+.metals/
+
+# Miscs
+.tmp/
+.DS_Store
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+*.bak
+*.swp
+*.swo
