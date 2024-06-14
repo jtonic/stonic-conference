@@ -52,6 +52,7 @@ case class Sponsor(name: String, sponsorshipType: SponsorshipType)
 
 case class Conference(
   name: String,
+  organization: Organization,
   conferenceType: ConferenceType,
   venue: Venue,
   contact: Contact,
