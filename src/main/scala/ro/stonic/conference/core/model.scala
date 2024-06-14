@@ -1,4 +1,4 @@
-package ro.stonic.conference
+package ro.stonic.conference.core.model
 
 // --------------------------------------------
 // value classes
