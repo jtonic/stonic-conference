@@ -1,65 +1,67 @@
-package ro.stonic.conference.core.model
+package ro.stonic.conference.core
 
-// --------------------------------------------
-// value classes
-// --------------------------------------------
-class ZipCode(val value: String) extends AnyVal
-class Price(val value: Double) extends AnyVal
-class Email(val value: String) extends AnyVal
-class Phone(val value: String) extends AnyVal
+object Model:
 
-// --------------------------------------------
-// type aliases
-// --------------------------------------------
-type Description = String | Null // nullable using union types
-type Contact = (Email, Phone) // tuple type
+  // --------------------------------------------
+  // value classes
+  // --------------------------------------------
+  class ZipCode(val value: String) extends AnyVal
+  class Price(val value: Double) extends AnyVal
+  class Email(val value: String) extends AnyVal
+  class Phone(val value: String) extends AnyVal
 
-// --------------------------------------------
-// enums (ADT sum types)
-// --------------------------------------------
-enum ConferenceType:
-  case Technical(technology: String)
-  case Environmental(aspect: String, zone: String)
-  case Medical(specialization: String, disease: String)
+  // --------------------------------------------
+  // type aliases
+  // --------------------------------------------
+  type Description = String | Null // nullable using union types
+  type Contact = (Email, Phone) // tuple type
 
-enum TicketType:
-  case Free
-  case Paid(price: Price)
+  // --------------------------------------------
+  // enums (ADT sum types)
+  // --------------------------------------------
+  enum ConferenceType:
+    case Technical(technology: String)
+    case Environmental(aspect: String, zone: String)
+    case Medical(specialization: String, disease: String)
 
-enum SponsorshipType:
-  case Platinum(price: Price)
-  case Gold
-  case Silver
+  enum TicketType:
+    case Free
+    case Paid(price: Price)
 
-// --------------------------------------------
-// case classes (ADT product types)
-// --------------------------------------------
-case class Address(street: String, city: String, country: String, zipCode: ZipCode)
+  enum SponsorshipType:
+    case Platinum(price: Price)
+    case Gold
+    case Silver
 
-case class Organization(name: String, address: Address, contact: Contact)
+  // --------------------------------------------
+  // case classes (ADT product types)
+  // --------------------------------------------
+  case class Address(street: String, city: String, country: String, zipCode: ZipCode)
 
-case class Venue(name: String, address: Address, capacity: Int)
+  case class Organization(name: String, address: Address, contact: Contact)
 
-case class Speaker(name: String, organization: Organization, contact: Contact)
+  case class Venue(name: String, address: Address, capacity: Int)
 
-case class Talk (title: String, description: Description, speakers: List[Speaker], duration: Int)
+  case class Speaker(name: String, organization: Organization, contact: Contact)
 
-case class Workshop(title: String, description: Description, speakers: List[Speaker], duration: Int, capacity: Int)
+  case class Talk (title: String, description: Description, speakers: List[Speaker], duration: Int)
 
-case class Attendee(name: String, contact: Option[Contact], ticketType: TicketType)
+  case class Workshop(title: String, description: Description, speakers: List[Speaker], duration: Int, capacity: Int)
 
-case class Sponsor(name: String, sponsorshipType: SponsorshipType)
+  case class Attendee(name: String, contact: Option[Contact], ticketType: TicketType)
 
-case class Conference(
-  name: String,
-  organization: Organization,
-  conferenceType: ConferenceType,
-  venue: Venue,
-  contact: Contact,
-  attendees: List[Attendee],
-  speakers: List[Speaker],
-  talks: List[Talk],
-  workshops: List[Workshop],
-  sponsors: List[Sponsor],
-  geolocation: Option[(Double, Double)] = None
-)
+  case class Sponsor(name: String, sponsorshipType: SponsorshipType)
+
+  case class Conference(
+    name: String,
+    organization: Organization,
+    conferenceType: ConferenceType,
+    venue: Venue,
+    contact: Contact,
+    attendees: List[Attendee],
+    speakers: List[Speaker],
+    talks: List[Talk],
+    workshops: List[Workshop],
+    sponsors: List[Sponsor],
+    geolocation: Option[(Double, Double)] = None
+  )

@@ -1,6 +1,6 @@
-import ro.stonic.conference.core.feed
-import ro.stonic.conference.core.model.ConferenceType
+import ro.stonic.conference.core.Feed
+import ro.stonic.conference.core.Model.ConferenceType
 
-val correctStonicConference = feed.stonicConference.copy(conferenceType =
+val correctStonicConference = Feed.stonicConference.copy(conferenceType =
   ConferenceType.Technical("Scala/Functional Programming")
 )
