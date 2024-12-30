@@ -4,6 +4,8 @@ target/
 .bloop/
 .metals/
 .bsp/
+**/*.tasty
+.scala-build/
 
 # Miscs
 .tmp/

@@ -1,7 +1,8 @@
 package ro.stonic.conference
-import ro.stonic.conference.core.feed
+
+import core.Feed
 
 @main
 def main() =
-  println("Hurray! Scala 3 Conference - STonic 2024 - is here!")
-  println(feed.stonicConference)
+  println("Hurray! STonic Scala Conference is here!")
+  println(Feed.stonicConference)
